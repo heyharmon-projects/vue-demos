@@ -12,19 +12,16 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script>
 import AppHeader from '@/components/AppHeader.vue'
 import AppSidebar from '@/components/AppSidebar.vue'
 
-export default defineComponent({
-    name: 'LayoutColumns',
-
+export default {
     components: {
         AppSidebar,
         AppHeader
     }
-});
+};
 </script>
 
 <style lang="scss" scoped>
@@ -49,7 +46,7 @@ App Body
     display: flex;
     flex-direction: column;
     width: 75rem;
-    margin: 0 auto;
+    margin: 0 80px;
     position: relative;
     padding: var(--space-sm) var(--space-md) var(--space-sm) 0;
     min-height: calc(100vh - var(--app-ui-header-height));

@@ -1,20 +1,16 @@
 <template>
     <nav class="s-tabs">
         <ul class="s-tabs__list">
-            <li><router-link to="/companies/redwood/dashboard" class="s-tabs__link">Dashboard</router-link></li>
-            <li><router-link to="/companies/redwood/sitemap" class="s-tabs__link">Sitemap</router-link></li>
-            <li><router-link to="/companies/redwood/navigation" class="s-tabs__link">Navigation</router-link></li>
-            <li><router-link to="/companies/redwood/crawler" class="s-tabs__link _s-tabs__link--current">Crawler</router-link></li>
+            <li><router-link to="#" class="s-tabs__link s-tabs__link--current">Tab One</router-link></li>
+            <li><router-link to="#" class="s-tabs__link">Tab Two</router-link></li>
+            <li><router-link to="#" class="s-tabs__link">Tab Three</router-link></li>
+            <li><router-link to="#" class="s-tabs__link">Tab Four</router-link></li>
         </ul>
     </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-    name: 'AppTabs',
-});
+<script>
+export default {};
 </script>
 
 <style media="screen">
