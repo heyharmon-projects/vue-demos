@@ -1,0 +1,71 @@
+<template>
+    <nav class="s-tabs">
+        <ul class="s-tabs__list">
+            <li><router-link to="/companies/redwood/dashboard" class="s-tabs__link">Dashboard</router-link></li>
+            <li><router-link to="/companies/redwood/sitemap" class="s-tabs__link">Sitemap</router-link></li>
+            <li><router-link to="/companies/redwood/navigation" class="s-tabs__link">Navigation</router-link></li>
+            <li><router-link to="/companies/redwood/crawler" class="s-tabs__link _s-tabs__link--current">Crawler</router-link></li>
+        </ul>
+    </nav>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+    name: 'AppTabs',
+});
+</script>
+
+<style media="screen">
+:root {
+    --s-tabs-border-bottom-width: 1px;
+    --s-tabs-selected-item-border-bottom-width: 1px;
+}
+</style>
+
+<style lang="scss" scoped>
+.s-tabs {
+    position: relative;
+    margin-bottom: var(--space-md);
+}
+
+.s-tabs__list {
+    display: flex;
+    overflow: auto;
+    -webkit-overflow-scrolling: auto;
+
+    &::after { // border bottom
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: var(--s-tabs-border-bottom-width);
+        left: 0;
+        bottom: 0;
+        background-color: var(--color-contrast-low);
+    }
+}
+
+.s-tabs__link {
+    font-size: var(--text-sm);
+    color: var(--color-contrast-medium);
+    text-decoration: none;
+    display: inline-block;
+    padding: var(--space-xs) 0;
+    margin: 0 var(--space-md) 0 0;
+    white-space: nowrap;
+    border-bottom: var(--s-tabs-selected-item-border-bottom-width) solid transparent;
+    z-index: 1;
+    transition: .2s;
+
+    &:hover:not(.s-tabs__link--current) {
+        color: var(--color-contrast-high);
+    }
+}
+
+.s-tabs__link--current {
+    position: relative;
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+</style>
