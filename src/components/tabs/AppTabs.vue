@@ -3,8 +3,8 @@
         <ul class="s-tabs__list">
             <li>
                 <router-link
-                    :to="{ name: 'home' }"
-                    :class="$route.name == 'home' ? 's-tabs__link--current' : ''"
+                    :to="{ name: 'algolia' }"
+                    :class="$route.name == 'algolia' ? 's-tabs__link--current' : ''"
                     class="s-tabs__link"
                 >
                     Algolia

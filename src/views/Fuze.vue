@@ -27,7 +27,7 @@ import useFuze from '@/composables/useFuze'
 
 export default {
     setup() {
-        const query = ref('loan')
+        const query = ref()
         const { results, search } = useFuze()
 
         watch(query, (query = '') => {

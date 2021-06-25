@@ -3,8 +3,8 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'home',
-    component: () => import('../views/Home.vue')
+    name: 'algolia',
+    component: () => import('../views/Algolia.vue')
   },
   {
     path: '/fuze',
