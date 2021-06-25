@@ -4,13 +4,14 @@
 
         <app-tabs/>
 
-        <app-input v-model="query" placeholder="Search..."/>
+        WIP
+        <!-- <app-input v-model="query" placeholder="Search..."/>
 
         <ul v-if="results" class="border radius-md shadow-sm margin-y-sm">
             <li v-for="result in results" class="text-sm padding-sm border-bottom">
                 {{ result.post_title }}
             </li>
-        </ul>
+        </ul> -->
     </layout-default>
 </template>
 
