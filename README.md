@@ -1,4 +1,4 @@
-# cms-client
+# Vue Demos
 
 ## Project setup
 ```
