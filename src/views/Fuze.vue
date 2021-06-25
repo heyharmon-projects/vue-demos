@@ -1,6 +1,6 @@
 <template>
     <layout-default>
-        <h3 class="margin-bottom-sm">Algolia</h3>
+        <h3 class="margin-bottom-sm">Fuze</h3>
 
         <app-tabs/>
 
@@ -8,7 +8,7 @@
 
         <ul v-if="results" class="border radius-md shadow-sm margin-y-sm">
             <li v-for="result in results" class="text-sm padding-sm border-bottom">
-                {{ result.post_title }}
+                {{ result.Question }}
             </li>
         </ul>
     </layout-default>
@@ -23,12 +23,12 @@ import AppTabs from '@/components/tabs/AppTabs.vue'
 import AppInput from '@/components/forms/AppInput.vue'
 
 // Composables
-import useAlgolia from '@/composables/useAlgolia'
+import useFuze from '@/composables/useFuze'
 
 export default {
     setup() {
-        const query = ref()
-        const { results, search } = useAlgolia()
+        const query = ref('loan')
+        const { results, search } = useFuze()
 
         watch(query, (query = '') => {
             search(query)

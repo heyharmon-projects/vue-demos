@@ -1,12 +1,20 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
-    // component: Home,
+    name: 'home',
+    component: () => import('../views/Home.vue')
+  },
+  {
+    path: '/fuze',
+    name: 'fuze',
+    component: () => import('../views/Fuze.vue')
+  },
+  {
+    path: '/algolia-fuze',
+    name: 'algolia-fuze',
+    component: () => import('../views/AlgoliaFuze.vue')
   },
   // {
   //   path: '/about',

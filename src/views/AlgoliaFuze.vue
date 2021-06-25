@@ -1,6 +1,6 @@
 <template>
     <layout-default>
-        <h3 class="margin-bottom-sm">Algolia</h3>
+        <h3 class="margin-bottom-sm">Algolia + Fuze</h3>
 
         <app-tabs/>
 

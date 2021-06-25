@@ -9,6 +9,7 @@
     "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
+    "algoliasearch": "^4.10.2",
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "codyhouse-framework": "^2.8.6",
