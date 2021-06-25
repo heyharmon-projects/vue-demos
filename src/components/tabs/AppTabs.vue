@@ -1,16 +1,39 @@
 <template>
     <nav class="s-tabs">
         <ul class="s-tabs__list">
-            <li><router-link to="#" class="s-tabs__link s-tabs__link--current">Tab One</router-link></li>
-            <li><router-link to="#" class="s-tabs__link">Tab Two</router-link></li>
-            <li><router-link to="#" class="s-tabs__link">Tab Three</router-link></li>
-            <li><router-link to="#" class="s-tabs__link">Tab Four</router-link></li>
+            <li>
+                <router-link
+                    :to="{ name: 'home' }"
+                    :class="$route.name == 'home' ? 's-tabs__link--current' : ''"
+                    class="s-tabs__link"
+                >
+                    Algolia
+                </router-link>
+            </li>
+            <li>
+                <router-link
+                    :to="{ name: 'fuze' }"
+                    :class="$route.name == 'fuze' ? 's-tabs__link--current' : ''"
+                    class="s-tabs__link"
+                >
+                    Fuze
+                </router-link>
+            </li>
+            <li>
+                <router-link
+                    :to="{ name: 'algolia-fuze' }"
+                    :class="$route.name == 'algolia-fuze' ? 's-tabs__link--current' : ''"
+                    class="s-tabs__link"
+                >
+                    Algolia + Fuze
+                </router-link>
+            </li>
         </ul>
     </nav>
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style media="screen">
