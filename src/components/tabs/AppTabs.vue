@@ -4,7 +4,7 @@
             <li>
                 <router-link
                     :to="{ name: 'algolia' }"
-                    :class="$route.name == 'algolia' ? 's-tabs__link--current' : ''"
+                    :class="$route.name === 'algolia' ? 's-tabs__link--current' : ''"
                     class="s-tabs__link"
                 >
                     Algolia
@@ -13,7 +13,7 @@
             <li>
                 <router-link
                     :to="{ name: 'fuze' }"
-                    :class="$route.name == 'fuze' ? 's-tabs__link--current' : ''"
+                    :class="$route.name === 'fuze' ? 's-tabs__link--current' : ''"
                     class="s-tabs__link"
                 >
                     Fuze
@@ -22,7 +22,7 @@
             <li>
                 <router-link
                     :to="{ name: 'algolia-fuze' }"
-                    :class="$route.name == 'algolia-fuze' ? 's-tabs__link--current' : ''"
+                    :class="$route.name === 'algolia-fuze' ? 's-tabs__link--current' : ''"
                     class="s-tabs__link"
                 >
                     Algolia + Fuze

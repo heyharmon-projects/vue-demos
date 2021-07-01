@@ -1,17 +1,10 @@
 <template>
     <layout-default>
+        <!-- Header -->
         <h3 class="margin-bottom-sm">Algolia + Fuze</h3>
-
         <app-tabs/>
 
-        WIP
-        <!-- <app-input v-model="query" placeholder="Search..."/>
-
-        <ul v-if="results" class="border radius-md shadow-sm margin-y-sm">
-            <li v-for="result in results" class="text-sm padding-sm border-bottom">
-                {{ result.post_title }}
-            </li>
-        </ul> -->
+        Work in progress
     </layout-default>
 </template>
 
@@ -24,12 +17,12 @@ import AppTabs from '@/components/tabs/AppTabs.vue'
 import AppInput from '@/components/forms/AppInput.vue'
 
 // Composables
-import useAlgolia from '@/composables/useAlgolia'
+import algolia from '@/composables/useAlgolia'
 
 export default {
     setup() {
         const query = ref()
-        const { results, search } = useAlgolia()
+        const { results, search } = algolia()
 
         watch(query, (query = '') => {
             search(query)
@@ -46,5 +39,5 @@ export default {
         AppTabs,
         AppInput
     }
-};
+}
 </script>

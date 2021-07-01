@@ -19,17 +19,24 @@ const apiClient = axios.create({
 
 export default function useFuze() {
     const results = ref()
+    const item = ref()
+    const loading = ref(false)
 
     async function search(query = '') {
         if (query) {
+            // Set loading
+            loading.value = true
+
+            // Search Fuze
             apiClient.get('SearchAnon', {
                 params: {
                     startIndex: 1,
-                    pageLength: 10,
+                    pageLength: 30,
                     searchWords: query
                 }
             })
             .then((response) => {
+                loading.value = false
                 results.value = response.data.d
             })
         } else {
@@ -37,11 +44,30 @@ export default function useFuze() {
         }
     }
 
+    async function getItem(kbid = '') {
+        // Set loading
+        loading.value = true
+
+        // Search Fuze
+        apiClient.get('GetAnon', {
+            params: {
+                kbid: kbid
+            }
+        })
+        .then((response) => {
+            loading.value = false
+            item.value = response.data.d
+        })
+    }
+
     return {
         // States
         results: computed(() => results.value),
+        item: computed(() => item.value),
+        loading: computed(() => loading.value),
 
         // Methods
         search,
+        getItem
     }
 }
