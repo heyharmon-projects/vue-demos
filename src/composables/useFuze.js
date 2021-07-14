@@ -22,7 +22,7 @@ export default function useFuze() {
     const item = ref()
     const loading = ref(false)
 
-    async function search(query = '') {
+    async function search(query = '', startIndex = 1, pageLength = 20) {
         if (query) {
             // Set loading
             loading.value = true
@@ -30,9 +30,9 @@ export default function useFuze() {
             // Search Fuze
             apiClient.get('SearchAnon', {
                 params: {
-                    startIndex: 1,
-                    pageLength: 30,
-                    searchWords: query
+                    searchWords: query,
+                    startIndex: startIndex,
+                    pageLength: pageLength
                 }
             })
             .then((response) => {

@@ -8,16 +8,16 @@
         <app-input v-model="query" placeholder="Search..."/>
 
         <div v-if="results">
-            <!-- Results meta -->
-            <p class="text-sm margin-y-md">{{ results.length }} results for "{{ query }}"</p>
-
             <!-- Results container -->
-            <div class="flex">
+            <div class="flex margin-y-md">
                 <!-- Left -->
                 <div class="width-80%">
+                    <!-- Results meta -->
+                    <p class="text-sm margin-bottom-md">{{ results.length }} <strong>Algolia</strong> results for "{{ query }}"</p>
+
                     <!-- Results list -->
                     <div class="border radius-md shadow-sm">
-                        <router-link v-for="result in results" to="" class="result flex justify-between align-center reset text-decoration-none text-sm padding-sm border-bottom">
+                        <router-link v-for="result in results" to="" class="flex justify-between align-center reset text-decoration-none text-sm padding-sm border-bottom">
                             {{ result.post_title }}
                             <small>{{ transformations.capitalize(result.post_type) }}</small>
                         </router-link>
@@ -44,8 +44,8 @@ import AppFilters from '@/components/filters/AppFilters.vue'
 
 // Composables
 import algolia from '@/composables/useAlgolia'
-import transformations from '@/composables/utilities/useTransformations'
 import filters from '@/composables/utilities/useFilters'
+import transformations from '@/composables/utilities/useTransformations'
 
 export default {
     setup() {
@@ -58,10 +58,12 @@ export default {
             search(query)
         })
 
+        query.value = 'loan'
+
         return {
             query,
-            selectedFilters,
             results,
+            selectedFilters,
             transformations
         }
     },

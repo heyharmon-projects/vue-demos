@@ -11,16 +11,16 @@
         <app-skeleton v-if="loading"/>
 
         <div v-if="results && !loading">
-            <!-- Results meta -->
-            <p class="text-sm margin-y-sm">{{ results.length }} results for "{{ query }}"</p>
-
             <!-- Results container -->
-            <div class="flex">
+            <div class="flex margin-y-md">
                 <!-- Left -->
                 <div class="width-80%">
+                    <!-- Results meta -->
+                    <p class="text-sm margin-bottom-md">{{ results.length }} <strong>Fuze</strong> results for "{{ query }}"</p>
+
                     <!-- Results list -->
                     <div class="border radius-md shadow-sm">
-                        <router-link v-for="result in results" :to="{ name: 'fuze-item', params: { kbid: result.KBID } }" class="result flex justify-between align-center reset text-decoration-none text-sm padding-sm border-bottom">
+                        <router-link v-for="result in results" :to="{ name: 'fuze-item', params: { kbid: result.KBID } }" class="flex justify-between align-center reset text-decoration-none text-sm padding-sm border-bottom">
                             {{ result.Question }}
                             <small v-html="result.Categories[0].CategoryName"></small>
                         </router-link>
@@ -57,6 +57,8 @@ export default {
         watch(query, (query = '') => {
             search(query)
         })
+
+        query.value = 'loan'
 
         return {
             query,

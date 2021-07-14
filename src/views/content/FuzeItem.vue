@@ -1,14 +1,14 @@
 <template>
     <layout-default>
         <!-- Header -->
-        <router-link :to="{ name: 'fuze' }" class="btn btn--primary margin-bottom-sm">Back</router-link>
+        <router-link :to="{ name: 'algolia-fuze' }" class="btn btn--primary margin-bottom-sm">Back</router-link>
 
         <!-- Loader -->
         <app-skeleton v-if="loading"/>
 
-        <div v-if="!loading">
+        <div v-if="!loading" class="reset">
             <!-- Item title -->
-            <h3 class="margin-y-sm">{{ item.Question }}</h3>
+            <h3 class="margin-y-sm color-black">{{ item.Question }}</h3>
 
             <!-- Meta -->
             <div class="text-component">
@@ -18,7 +18,7 @@
             </div>
 
             <!-- Content -->
-            <div v-html="item.Answer" class="text-component margin-y-lg"></div>
+            <div v-html="item.Answer" class="text-component color-black margin-y-lg"></div>
 
             <!-- Related content -->
             <div v-if="item.RelatedItems.length" class="margin-y-sm">

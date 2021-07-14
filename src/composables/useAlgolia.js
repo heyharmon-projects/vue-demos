@@ -11,15 +11,15 @@ export default function useAlgolia() {
     const results = ref()
     const loading = ref(false)
 
-    async function search(query = '') {
+    async function search(query = '', page = 1, hitsPerPage = 20) {
         if (query) {
             // Set loading
             loading.value = true
 
             // Search Algolia
             algoliaIndex.search(query, {
-                page: 1,
-                hitsPerPage: 30
+                page: page,
+                hitsPerPage: hitsPerPage
             })
             .then(({ hits }) => {
                 loading.value = false
